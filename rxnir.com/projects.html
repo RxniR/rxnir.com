@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - RxniR's Minecraft Datapacks</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="icon" href="data/img/logo.ico">
+    <script defer src="data/js/animations.js"></script>
+    <script defer src="data/js/smoothScroll.js"></script>
+    <script defer src="data/js/searchBar.js"></script>
+    <script defer src="data/js/myaccount.js"></script>
+    <style>
+        @media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-section {
+        padding: 20px;
+    }
+}
+
+footer {
+    background-color: #111;
+    color: #f5f5f5;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 2px solid #444;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    position: relative;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+footer a {
+            color: #f5f5f5;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+
+footer a:hover .github-logo {
+    transform: scale(1.1);
+    filter: brightness(1.3);
+}
+
+.github-logo {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+    footer {
+        font-size: 12px;
+        padding: 15px;
+    }
+
+    .github-logo {
+        width: 20px;
+        height: 20px;
+    }
+}
+.patreon-container {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: white;
+    margin: 10px 0;
+}
+
+.patreon-logo {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.patreon-logo:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+@media (max-width: 600px) {
+    .patreon-container {
+        font-size: 12px;
+    }
+
+    .patreon-logo {
+        width: 20px;
+        height: 20px;
+    }
+}
+       .card-img-top {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.card {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.card img {
+    border: none !important;
+    outline: none !important;
+}
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.hamburger-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.hamburger-button {
+    background: url('data/img/hamburger-icon.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+.navigation-menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    height: 100%;
+    width: 250px;
+    background-color: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    border-left: 1px solid #ddd;
+    z-index: 1000;
+    padding: 20px;
+    transition: right 0.3s ease;
+}
+.navigation-menu a:hover {
+    border-color: black;
+    background-color: black;
+    color: gray;
+}
+.navigation-menu.visible {
+    right: 0;
+}
+
+.navigation-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation-menu li {
+    margin: 15px 0;
+}
+
+.navigation-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+.modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #111;
+}
+
+.modal-body p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #555;
+    text-align: center;
+}
+
+.d-flex {
+    gap: 10px;
+}
+
+.d-flex a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 4px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.d-flex a img {
+    width: 28px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.d-flex a:hover {
+    background-color: #eaeaea;
+    border-color: #ccc;
+    transform: scale(1.05);
+}
+footer a:hover {
+            text-decoration: underline;
+            color: #ffcc66;
+        }
+   </style>
+</head>
+
+<body>
+    <div class="hamburger-container">
+        <button class="hamburger-button" id="hamburgerButton" aria-label="Toggle Navigation Menu"></button>
+    </div>
+    <div class="navigation-menu hidden" id="navigationMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="myaccounts.html">My Accounts</a></li>
+            <li><a href="docs.html">Documentation</a></li>
+            <li><a href="dev-docs.html">Developer Documentation</a></li>
+        </ul>
+    </div>
+
+<section class="container mt-5">
+    <h2>Projects</h2>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <input type="text" id="filterInput" class="form-control" placeholder="Search projects..." style="width: 70%;">
+    </div>
+    <div id="errorMessage" class="text-danger" style="display: none;">No projects found. Try a different keyword.</div>
+    <div id="projectResults" class="row row-cols-1 row-cols-md-3 g-4"></div>
+</section>
+<footer>
+    <p>
+        <a href="https://github.com/RxniR/My-Datapacks" target="_blank">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
+                 alt="GitHub Logo" class="github-logo">
+        </a>
+        All of my Datapacks are open sourced. Click the GitHub icon to view them.
+        <div class="patreon-container">
+            <a href="https://www.patreon.com/c/RxniR" target="_blank">
+                <img src="data/img/patreon.png" alt="Patreon Logo" class="patreon-logo">
+            </a>
+            I have a Patreon. If you want to support, click the Patreon image.
+        </div>
+        <p>&copy; 2024 RxniR. All Rights Reserved.</p>
+        <p>
+            <a href="tos.html">Terms of Service</a> |
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </p> 
+</footer>   
+    <script>
+const hamburgerButton = document.getElementById('hamburgerButton');
+const navigationMenu = document.getElementById('navigationMenu');
+
+hamburgerButton.addEventListener('click', () => {
+    const isHidden = navigationMenu.classList.contains('hidden');
+    navigationMenu.classList.toggle('hidden', !isHidden);
+    navigationMenu.classList.toggle('visible', isHidden);
+});
+
+document.addEventListener('click', (event) => {
+    const isClickInsideMenu = navigationMenu.contains(event.target);
+    const isClickOnButton = hamburgerButton.contains(event.target);
+
+    if (!isClickInsideMenu && !isClickOnButton) {
+        navigationMenu.classList.add('hidden');
+        navigationMenu.classList.remove('visible');
+    }
+});
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+
+</html>

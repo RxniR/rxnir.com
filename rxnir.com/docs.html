@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - RxniR's Datapacks</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="icon" href="data/img/logo.ico">
+    <script defer src="data/js/animations.js"></script>
+    <script defer src="data/js/myaccount.js"></script>
+    <style>
+        @media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-section {
+        padding: 20px;
+    }
+}
+
+        footer {
+    background-color: #111;
+    color: #f5f5f5;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 2px solid #444;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    position: relative;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover .github-logo {
+    transform: scale(1.1);
+    filter: brightness(1.3);
+}
+
+.github-logo {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+    footer {
+        font-size: 12px;
+        padding: 15px;
+    }
+
+    .github-logo {
+        width: 20px;
+        height: 20px;
+    }
+}
+.patreon-container {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: white;
+    margin: 10px 0;
+}
+
+.patreon-logo {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.patreon-logo:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+@media (max-width: 600px) {
+    .patreon-container {
+        font-size: 12px;
+    }
+
+    .patreon-logo {
+        width: 20px;
+        height: 20px;
+    }
+}
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            color: black;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 5px 0 0;
+        }
+
+        .content-section {
+            padding: 40px 20px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .content-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .content-section p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        pre {
+            background-color: #333;
+            color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        footer {
+            background-color: #111;
+            color: #f5f5f5;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #f5f5f5;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: #ffcc66;
+        }
+        .hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.hamburger-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.hamburger-button {
+    background: url('data/img/hamburger-icon.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+.navigation-menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    height: 100%;
+    width: 250px;
+    background-color: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    border-left: 1px solid #ddd;
+    z-index: 1000;
+    padding: 20px;
+    transition: right 0.3s ease;
+}
+.navigation-menu a:hover {
+    border-color: black;
+    background-color: black;
+    color: gray;
+}
+.navigation-menu.visible {
+    right: 0;
+}
+
+.navigation-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation-menu li {
+    margin: 15px 0;
+}
+
+.navigation-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+    <div class="hamburger-container">
+        <button class="hamburger-button" id="hamburgerButton" aria-label="Toggle Navigation Menu"></button>
+    </div>
+    <div class="navigation-menu hidden" id="navigationMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="myaccounts.html">My Accounts</a></li>
+            <li><a href="docs.html">Documentation</a></li>
+            <li><a href="dev-docs.html">Developer Documentation</a></li>
+        </ul>
+    </div>
+    <header>
+        <h1>RxniR's Datapacks Documentation</h1>
+        <p>Learn how to use and configure my Minecraft datapacks</p>
+        <p>This documentation page is only used to show how to download and use my projects, if you want to publish your own, visit the <a href="dev-docs.html">Deveolper Documentation</a> page.</p>
+    </header>
+
+    <div class="container mt-5">
+        <section class="content-section">
+            <h2>Introduction</h2>
+            <p>Welcome to the documentation for RxniR's Minecraft Datapacks. This guide will walk you through the installation process, key features, and how to customize the datapacks to fit your needs.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Installation Instructions</h2>
+            <p>Follow these steps to install a datapack:</p>
+            <ol>
+                <li>Download the desired datapack from <a href="https://modrinth.com/user/RxniR" target="_blank">Modrinth</a>, <a href="https://www.curseforge.com/members/rxnir/projects" target="_blank">CurseForge</a> or from the <a href="projects.html" target="_blank">Projects Page</a>.</li>
+                <li>Navigate to your Minecraft world save folder. For example:
+                    <p>Minecraft</p>
+                    <pre>%appdata%/.minecraft/saves/YourWorldName/</pre>
+                    <p>CurseForge</p>
+                    <pre>curseforge/minecraft/Instances/YourInstancesName/saves/YourWorldName</pre>
+                    <p>Modrinth</p>
+                    <pre>%appdata%/ModrinthApp/profiles/YourProfileName/saves/YourWorldName</pre>
+                </li> the downloaded datapack `.zip` file into the `datapacks` folder of your world save.</li>
+                <li> You can also use a loader, like <a href="https://www.curseforge.com/minecraft/mc-mods/paxi" target="_blank">Paxi</a>, <a href="https://www.curseforge.com/minecraft/mc-mods/open-loader" target="_blank">Open Loader</a> or <a href="https://www.curseforge.com/minecraft/mc-mods/drp-global-datapack" target="_blank">Global Packs</a></li>
+                <li>Start or reload the world using the command:
+                    <pre>/reload</pre>
+                </li>
+            </ol>
+        </section>
+
+        <section class="content-section">
+            <h2>How to Use</h2>
+            <p>Once installed, you can activate the datapack by following the in-game instructions:</p>
+            <ul>
+                <p>Use the command <code>/datapack list</code> to ensure the datapack is loaded.</p>
+                <p> Now that the datapack is set up, here are some things you can do, with your datapack.</p>
+                <li>Get a cutting board.</li>
+                <li>Get a knife of any rarity.</li>
+                <li>Place your modded log onto the cutting board.</li>
+                <li>Right click the cutting board.</li>
+                <li>And thats it, then you'll get a piece of bark.</li>
+                <p>For more information regarding the farmer's delight mod, check out the <a href="https://farmersdelight.fandom.com/wiki/Farmer%27s_Delight_Wiki" target="_blank">Official Wiki</a>.</p>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Additional Notes</h2>
+            <p>Here are some additional tips for working with datapacks:</p>
+            <ul>
+                <li>Always back up your world before adding or removing datapacks.</li>
+                <li>If a datapack isn't working as expected, check the Minecraft log for errors.</li>
+                <li>For support or suggestions, feel free to contact me via <a href="mailto:rxnirdatapack.dev@gmail.com">rxnirdatapack.dev@gmail.com</a>.</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>
+            <a href="https://github.com/RxniR/My-Datapacks" target="_blank">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
+                     alt="GitHub Logo" class="github-logo">
+            </a>
+            All of my Datapacks are open sourced. Click the GitHub icon to view them.
+            <div class="patreon-container">
+                <a href="https://www.patreon.com/c/RxniR" target="_blank">
+                    <img src="data/img/patreon.png" alt="Patreon Logo" class="patreon-logo">
+                </a>
+                I have a Patreon. If you want to support, click the Patreon image.
+            </div>
+            <p>&copy; 2024 RxniR. All Rights Reserved.</p>
+            <p>
+                <a href="tos.html">Terms of Service</a> |
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </p> 
+    </footer> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+                const hamburgerButton = document.getElementById('hamburgerButton');
+const navigationMenu = document.getElementById('navigationMenu');
+
+hamburgerButton.addEventListener('click', () => {
+    const isHidden = navigationMenu.classList.contains('hidden');
+    navigationMenu.classList.toggle('hidden', !isHidden);
+    navigationMenu.classList.toggle('visible', isHidden);
+});
+
+document.addEventListener('click', (event) => {
+    const isClickInsideMenu = navigationMenu.contains(event.target);
+    const isClickOnButton = hamburgerButton.contains(event.target);
+
+    if (!isClickInsideMenu && !isClickOnButton) {
+        navigationMenu.classList.add('hidden');
+        navigationMenu.classList.remove('visible');
+    }
+});
+    </script>
+</body>
+
+</html>
